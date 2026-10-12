@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SNUPA Market Analyser | Members</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--alt:#F2F2F2;--ink:#000;--mut:#555;--line:#D9D9D9;--line2:#B5B5B5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--alt:#141414;--ink:#FFF;--mut:#A8A8A8;--line:#2E2E2E;--line2:#4A4A4A}}
+:root[data-theme="dark"]{--bg:#000;--alt:#141414;--ink:#FFF;--mut:#A8A8A8;--line:#2E2E2E;--line2:#4A4A4A}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;margin:0;line-height:1.12}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+header{border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.hd{display:flex;align-items:center;gap:10px;height:62px}
+.lg{width:34px;height:34px;border-radius:6px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:20px}
+.hd b{font-family:'Fraunces',serif;font-size:1.2rem;letter-spacing:.04em}
+.hd span{margin-left:auto;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.eb{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+h1{font-size:clamp(1.9rem,6vw,2.7rem);margin:10px 0 8px}
+.lead{color:var(--mut);margin:0 0 22px}
+.drop{border:1.5px dashed var(--line2);border-radius:14px;padding:30px 18px;text-align:center;cursor:pointer;background:var(--alt);transition:border-color .2s}
+.drop:hover,.drop.on{border-color:var(--ink)}
+.drop b{display:block;font-size:1.05rem}.drop small{color:var(--mut)}
+.prev{position:relative;margin-top:14px;display:none}
+.prev img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+.prev button{position:absolute;top:10px;right:10px;background:var(--bg);color:var(--ink);border:1px solid var(--line2);border-radius:999px;padding:6px 12px;font-weight:600;font-size:.8rem;cursor:pointer}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0}
+label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:6px}
+input,select{width:100%;padding:12px;border:1px solid var(--line2);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+input:focus,select:focus{outline:none;border-color:var(--ink)}
+.go{width:100%;padding:16px;border-radius:10px;border:0;background:var(--ink);color:var(--bg);font:700 1rem 'Inter',sans-serif;cursor:pointer}
+.go:disabled{opacity:.4;cursor:not-allowed}
+.stop{background:transparent;color:var(--ink);border:1px solid var(--line2);margin-top:10px;display:none}
+.msg{margin-top:14px;color:var(--mut);font-size:.92rem}
+.msg.err{color:var(--ink);border:1px solid var(--ink);border-radius:8px;padding:12px}
+#out{margin:28px 0 8px}
+.verdict{border:1.5px solid var(--ink);border-radius:16px;padding:22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.badge{font-family:'Fraunces',serif;font-weight:700;font-size:2rem;background:var(--ink);color:var(--bg);padding:10px 22px;border-radius:10px;letter-spacing:.04em}
+.vm{flex:1;min-width:200px}.vm b{display:block;font-size:1.05rem}.vm span{color:var(--mut);font-size:.9rem}
+h2{font-size:1.35rem;margin:30px 0 12px}
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.cell{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--alt)}
+.cell small{display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.cell b{display:block;font-family:'Fraunces',serif;font-size:1.3rem;margin-top:4px;word-break:break-word}
+.cell em{display:block;font-style:normal;font-size:.76rem;opacity:.75;margin-top:4px}
+.cell.hi{background:var(--ink);color:var(--bg)}.cell.hi small{color:inherit;opacity:.7}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:10px}
+.card p{margin:0;color:var(--mut);font-size:.94rem}.card h3{font-size:1.02rem;margin-bottom:6px}
+.zone{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;font-size:.93rem}
+.zone:last-child{border:0}.zone span{color:var(--mut)}.zone b{white-space:nowrap}
+ul.ck{list-style:none;padding:0;margin:0}ul.ck li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid var(--line);font-size:.94rem}
+ul.ck li::before{content:"";position:absolute;left:2px;top:14px;width:14px;height:14px;border:1.5px solid var(--ink);border-radius:4px}
+.mk{margin-top:18px}.mk img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}.mk .note{font-size:.8rem;color:var(--mut);margin:8px 0 0}.mk .dl{margin-top:10px}
+.bd{margin:0;padding-left:22px}.bd li{padding:9px 0 9px 4px;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--mut)}.bd li b{color:var(--ink)}
+.more{margin-top:26px;border:1px solid var(--line);border-radius:12px;padding:2px 16px 12px}.more summary{cursor:pointer;font-weight:600;padding:14px 0}
+.copy{margin-top:16px;background:transparent;color:var(--ink);border:1px solid var(--line2);padding:12px 18px;border-radius:8px;font-weight:600;cursor:pointer}
+.disc{margin:26px 0 50px;padding:14px;border:1px solid var(--line);border-radius:10px;color:var(--mut);font-size:.8rem}
+footer{border-top:1px solid var(--line);padding:22px 0;text-align:center;color:var(--mut);font-size:.78rem}
+#lo{margin-left:12px;background:transparent;color:var(--ink);border:1px solid var(--line2);border-radius:8px;padding:7px 12px;font:600 .78rem 'Inter',sans-serif;cursor:pointer}
+#login label{margin-top:14px}
+</style>
+</head>
+<body>
+<header><div class="wrap hd"><div class="lg">S</div><b>SNUPA</b><span>Market Analyser</span><button id="lo" type="button" style="display:none">Log out</button></div></header>
+<section class="wrap" id="login" style="padding-top:44px;max-width:460px">
+  <span class="eb">Members only</span>
+  <h1>Log in to the analyser</h1>
+  <p class="lead">Enter your username and access key.</p>
+  <label for="lu">Username</label><input id="lu" autocomplete="username" autocapitalize="none" spellcheck="false">
+  <label for="lk">Access key</label><input id="lk" type="password" autocomplete="current-password">
+  <button class="go" id="lb" type="button" style="margin-top:16px">Log in</button>
+  <div class="msg" id="lm"></div>
+  <p class="msg">No key yet? Message SNUPA on WhatsApp: +267 74 098 526.</p>
+</section>
+<main class="wrap" id="app" style="padding-top:34px;display:none">
+  <span class="eb">Supply &amp; Demand &middot; SMC &middot; CRT</span>
+  <h1>Upload your chart. Get your entry and exit.</h1>
+  <p class="lead">Take a screenshot of any chart, upload it, and the analyser reads it with Supply &amp; Demand and Smart Money Concepts (SMC), or CRT, then shows you a clear breakdown and where to enter, where to put your stop loss and where to take profit.</p>
+
+  <div class="drop" id="drop" tabindex="0" role="button" aria-label="Upload chart screenshot">
+    <b>Tap to upload a chart screenshot</b>
+    <small>or drag it here, or paste it (Ctrl+V)</small>
+  </div>
+  <input type="file" id="file" accept="image/*" hidden>
+  <div class="prev" id="prev"><img id="pimg" alt="Your chart"><button id="rm" type="button">Remove</button></div>
+
+  <div class="row">
+    <div><label for="ins">Pair / market</label><input id="ins" placeholder="e.g. XAUUSD, EURUSD"></div>
+    <div><label for="tf">Timeframe</label><select id="tf"><option value="">Auto-detect</option><option>M5</option><option>M15</option><option>M30</option><option>H1</option><option>H4</option><option>D1</option></select></div>
+    <div><label for="st">Strategy</label><select id="st"><option value="smc">S&amp;D + SMC</option><option value="crt">CRT + S&amp;D</option></select></div>
+    <div><label for="mk">Market type</label><select id="mk"><option>Auto-detect</option><option>Forex</option><option>Gold / commodities</option><option>Indices</option><option>Crypto</option><option>Synthetic indices</option></select></div>
+    <div><label for="rr">Minimum reward</label><select id="rr"><option value="1:2">1 : 2</option><option value="1:3">1 : 3</option><option value="1:1.5">1 : 1.5</option></select></div>
+  </div>
+
+  <button class="go" id="go" disabled>Analyse chart</button>
+  <button class="go stop" id="stop" type="button">Stop</button>
+  <div class="msg" id="msg"></div>
+
+  <div id="out"></div>
+
+  <div class="disc">Educational chart analysis, not financial advice. No setup is guaranteed and trading carries a high risk of loss. Always use a stop loss, risk only what you can afford to lose, and confirm the price levels on your own chart before you trade.</div>
+</main>
+<footer>&copy; SNUPA &middot; Palapye, Botswana</footer>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var blob=null,sample=null,ctl=null,lastText='';
+  var drop=$('drop'),file=$('file'),go=$('go'),msg=$('msg'),out=$('out');
+  var API_URL='https://snupa-analyser.othusitsejohn36.workers.dev'; /* <-- paste your Worker address here, no slash at the end */
+  var token=sessionStorage.getItem('snupa_t')||'';
+  function showApp(on){$('login').style.display=on?'none':'';$('app').style.display=on?'':'none';$('lo').style.display=on?'':'none'}
+  async function api(path,body,signal){
+    var r=await fetch(API_URL+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:signal});
+    var j={};try{j=await r.json()}catch(x){}
+    if(!r.ok){var e=new Error(j.error||'Request failed');e.code=j.code||('http_'+r.status);throw e}
+    return j;
+  }
+  async function login(){
+    var lm=$('lm');lm.textContent='Checking...';lm.className='msg';
+    try{
+      var j=await api('/login',{username:$('lu').value.trim(),key:$('lk').value});
+      token=j.token;sessionStorage.setItem('snupa_t',token);$('lk').value='';lm.textContent='';showApp(true);
+    }catch(e){
+      lm.className='msg err';
+      lm.textContent=e.code==='bad_login'?'Wrong username or key.':e.code==='expired'?'Your access has expired. Contact SNUPA.':'Could not log in. Check your internet and try again.';
+    }
+  }
+  function logout(){token='';sessionStorage.removeItem('snupa_t');out.textContent='';showApp(false)}
+  function toJpegB64(f){
+    return new Promise(function(res,rej){
+      var u=URL.createObjectURL(f),im=new Image();
+      im.onload=function(){var sc=Math.min(1,1600/Math.max(im.naturalWidth,im.naturalHeight)),cv=document.createElement('canvas');cv.width=Math.round(im.naturalWidth*sc);cv.height=Math.round(im.naturalHeight*sc);cv.getContext('2d').drawImage(im,0,0,cv.width,cv.height);URL.revokeObjectURL(u);res(cv.toDataURL('image/jpeg',0.85).split(',')[1])};
+      im.onerror=function(){URL.revokeObjectURL(u);rej(new Error('image'))};im.src=u;
+    });
+  }
+  async function askWorker(prompt,files,signal){
+    var imgs=[];for(var i=0;i<files.length;i++)imgs.push(await toJpegB64(files[i]));
+    var j=await api('/analyse',{token:token,prompt:prompt,images:imgs},signal);
+    return {text:j.text};
+  }
+
+  function setMsg(t,err){msg.textContent=t||'';msg.className='msg'+(err?' err':'')}
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined&&text!==null)e.textContent=text;return e}
+
+  function setFile(f){
+    if(!f||!/^image\//.test(f.type)){setMsg('Please choose an image (a chart screenshot).',true);return}
+    blob=f;
+    var r=new FileReader();
+    r.onload=function(){$('pimg').src=r.result;$('prev').style.display='block';drop.style.display='none';go.disabled=!sample;};
+    r.readAsDataURL(f);setMsg('');
+  }
+  drop.addEventListener('click',function(){file.click()});
+  drop.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();file.click()}});
+  file.addEventListener('change',function(){if(file.files[0])setFile(file.files[0])});
+  ['dragover','dragenter'].forEach(function(n){drop.addEventListener(n,function(e){e.preventDefault();drop.classList.add('on')})});
+  ['dragleave','drop'].forEach(function(n){drop.addEventListener(n,function(e){e.preventDefault();drop.classList.remove('on')})});
+  drop.addEventListener('drop',function(e){if(e.dataTransfer.files[0])setFile(e.dataTransfer.files[0])});
+  document.addEventListener('paste',function(e){var it=e.clipboardData&&e.clipboardData.files;if(it&&it[0])setFile(it[0])});
+  $('rm').addEventListener('click',function(){blob=null;file.value='';$('prev').style.display='none';drop.style.display='';go.disabled=true;out.textContent='';setMsg('')});
+
+  (async function init(){
+    sample=true;showApp(!!token);go.disabled=!blob;
+    $('lb').addEventListener('click',login);
+    $('lk').addEventListener('keydown',function(e){if(e.key==='Enter')login()});
+    $('lu').addEventListener('keydown',function(e){if(e.key==='Enter')$('lk').focus()});
+    $('lo').addEventListener('click',logout);
+  })();
+
+  function prompt(){
+    var ins=$('ins').value.trim(),tf=$('tf').value,rr=$('rr').value,st=$('st').value,mk=$('mk').value;
+    var SD=`METHOD - Supply and Demand: mark fresh supply zones (rally-base-drop, drop-base-drop) and fresh demand zones (drop-base-rally, rally-base-rally) where price left the area with strong, imbalanced candles. Entry is at the proximal (near) edge of the zone, the stop goes just beyond the distal (far) edge, and targets are the next opposing zone or clear liquidity. Zones that price has already revisited are weaker.`;
+    var SMC=`METHOD - SMC (Smart Money Concepts): (1) Market structure: label the swing points (HH, HL, LH, LL). A BOS (break of structure) continues the trend; a CHoCH (change of character) is the first break against the trend. (2) Liquidity: equal highs, equal lows and obvious swing points hold resting orders that smart money sweeps before reversing. (3) Order block (OB): the last opposite candle before the impulsive move that broke structure. (4) FVG (fair value gap): a three-candle imbalance. (5) Premium and discount: look to BUY in discount (below 50% of the current swing range) and SELL in premium (above 50%). (6) Entry model: liquidity sweep, then CHoCH or BOS, then price returns to an OB or FVG that sits inside a fresh supply or demand zone. Enter at the OB or zone edge (or the 50% of the OB), put the stop beyond the OB or zone extreme or beyond the sweep wick, and target the opposite liquidity or the next opposing zone.`;
+    var CRT=`METHOD - CRT (Candle Range Theory): treat a prior candle (usually the previous higher-timeframe candle) as the range with a high and a low. The setup is: the next candle sweeps one side of that range, taking liquidity beyond the high or low, then closes back inside the range. The expected move is toward the opposite side of the range, with the 50% level as the first target and the opposite range extreme as the main target. Entry is after the sweep and a rejection or shift in structure; the stop goes beyond the sweep wick.`;
+    var methods=st==='crt'?(CRT+'\n\n'+SD):(SMC+'\n\n'+SD);
+    var smcShape=st==='crt'
+      ?`"crt":{"setup_found":true,"range_high":"","range_low":"","equilibrium":"","sweep":"what was swept and where","explanation":"short plain explanation"},`
+      :`"smc":{"trend":"Bullish|Bearish|Ranging","structure":[{"label":"HH|HL|LH|LL|BOS|CHoCH","price":"","note":""}],"liquidity":[{"type":"Equal highs|Equal lows|Swept high|Swept low","price":"","note":""}],"order_blocks":[{"type":"bullish|bearish","top":"","bottom":"","note":""}],"fvg":[{"type":"bullish|bearish","top":"","bottom":"","note":""}],"premium_discount":"where price is inside the swing range","explanation":"short plain explanation"},`;
+    return `You are a disciplined price-action analyst. Study the attached trading chart screenshot and produce ONE clear trade plan using the method below.
+
+${methods}
+
+RULES: Read the price axis carefully and quote real price levels from the chart. If you cannot read a level exactly, give the best approximation and say approx. ALWAYS give a concrete plan with a real entry price, stop loss and take profits. PREFER AN ENTRY NOW: when price is already at or very close to the trading zone (within about a quarter of the stop distance), give a market entry: order_type Buy now (market) or Sell now (market), entry is the current price, and when is Now. If price is not there yet, that is NOT a reason to say WAIT: give a Buy limit or Sell limit at the nearest good zone, set when to When price reaches (the price), and in timing give a rough time window based on the chart timeframe and the distance to the entry (for example Likely today for M5 to H1 charts, Within 1-2 days for H4, This week for D1) and make clear it is only an estimate. Choose the direction from the trend and the strongest nearby zone. If the signals are mixed, still pick the better side and set confidence to Low. Aim for a reward of at least ${rr}; if the chart cannot give that, still give the plan and say the reward is below target in invalidation. Use the bias WAIT ONLY when no zone, swing point or price scale can be read at all. Never invent candles that are not visible. KEEP EVERY TEXT SHORT AND CLEAN: the summary is ONE sentence of at most 18 words; each breakdown detail is at most 14 words; entry_reason, stop_reason and invalidation are at most 14 words each; every note is at most 6 words; every explanation field is at most 15 words; list at most 2 items per zone or structure list and at most 3 confirmations of at most 6 words each. WRITE FOR A COMPLETE BEGINNER: use everyday words and short sentences. Whenever you must use a trading term (supply, demand, liquidity, BOS, CHoCH, order block, FVG, sweep), explain it in a few plain words in the same sentence, for example: a supply zone (where sellers pushed price down before). The summary must say what to do in simple words, for example: Sell now at 2372, or: Place a sell limit at 2372, it could trigger later today. No filler. The page will DRAW your levels on the screenshot, so the numeric overlay values must be accurate: for axis choose two price-axis labels that are far apart (one near the top, one near the bottom) and give the price of each label and its vertical position as a percent of the FULL image height (0 = top edge, 100 = bottom edge). plot_right_pct is where the plot ends and the price labels begin, as a percent of the full image width. entry_x_pct is the horizontal position of the latest candle. x_from_pct and x_to_pct are horizontal positions as a percent of the full image width. Use plain numbers (no commas or currency symbols) and null for anything not applicable. If the image is not a chart or is unreadable, set readable to false.
+${ins?'Pair or market given by the user: '+ins+'.':''} ${tf?'Timeframe given by the user: '+tf+'.':''} Market type: ${mk}. ${mk==='Indices'?'This is a stock index such as US30, NAS100, SPX500 or GER40: quote every distance in index points (not pips), expect big fast candles, keep the stop beyond the zone with a buffer based on the size of recent candles, and note that indices move most around the London open and the New York open.':mk==='Synthetic indices'?'This is a synthetic index (for example Volatility or Boom and Crash): it trades all day with no news or session effects, so do not use session timing, quote distances in points, and keep the stop beyond the zone with a buffer based on recent candle size.':mk==='Crypto'?'This is crypto: it trades 24 hours, so be wary of sudden wicks and use a stop buffer based on recent candle size.':mk==='Gold / commodities'?'This is gold or a commodity: quote distances in dollars or points as shown on the chart and expect fast moves around the London and New York opens.':mk==='Forex'?'This is forex: quote distances in pips.':'Detect the market type from the chart and use the matching units.'}
+
+Reply with ONLY valid JSON (no markdown, no commentary) in exactly this shape:
+{"readable":true,"instrument":"","timeframe":"","current_price":"","bias":"BUY|SELL|WAIT","confidence":"Low|Medium|High","summary":"one short sentence",
+"breakdown":[{"step":"1-3 word title","detail":"max 14 words, beginner words"}],
+${smcShape}
+"supply_demand":{"supply_zones":[{"from":"","to":"","note":""}],"demand_zones":[{"from":"","to":"","note":""}],"explanation":"short plain explanation"},
+"trade":{"order_type":"Buy now (market)|Sell now (market)|Buy limit|Sell limit","when":"Now, or When price reaches X","timing":"rough estimate, for example Likely today","entry":"","entry_reason":"why enter exactly here","stop_loss":"","stop_reason":"why the stop goes exactly here","take_profit_1":"","take_profit_2":"","risk_reward":"","invalidation":"what would cancel this idea"},
+"confirmations":["short checklist items to confirm before entering"],"if_wait":"what to wait for (empty if bias is not WAIT)",
+"overlay":{"axis":[{"price":0,"y_pct":0},{"price":0,"y_pct":0}],"plot_right_pct":0,"entry_x_pct":0,"levels":{"entry":0,"stop_loss":0,"take_profit_1":0,"take_profit_2":0,"range_high":0,"range_low":0,"equilibrium":0},"zones":[{"type":"supply|demand|ob_bull|ob_bear|fvg","top":0,"bottom":0,"x_from_pct":0}],"structure":[{"label":"BOS|CHoCH","price":0,"x_from_pct":0,"x_to_pct":0}]}}
+The breakdown must have exactly 5 steps in order: Trend, Liquidity, Zone, Entry, Stop and targets.`;
+  }
+
+  go.addEventListener('click',async function(){
+    if(!blob||!sample)return;
+    out.textContent='';go.disabled=true;$('stop').style.display='block';
+    ctl=new AbortController();var t0=Date.now();
+    var timer=setInterval(function(){setMsg('Reading your chart... '+Math.round((Date.now()-t0)/1000)+'s')},500);
+    setMsg('Reading your chart...');
+    try{
+      var res=await askWorker(prompt(),[blob],ctl.signal);
+      var txt=res.text||'';var a=txt.indexOf('{'),b=txt.lastIndexOf('}');
+      var data=JSON.parse(txt.slice(a,b+1));
+      render(data);setMsg('');
+      out.scrollIntoView({behavior:'smooth',block:'start'});
+    }catch(e){
+      var c=e&&e.code;if(e&&e.name==='AbortError')c='cancelled';if(c==='bad_token'||c==='expired'){token='';sessionStorage.removeItem('snupa_t');showApp(false);$('lm').className='msg err';$('lm').textContent='Please log in again.'}
+      var m={limit:'You reached your daily limit. Try again tomorrow.',upstream:'The analysis service is busy. Try again in a moment.',not_granted:'Permission was declined. Allow Claude to run the analysis and try again.',rate_limited:'Too many requests. Wait a moment and try again.',cancelled:'Stopped.',images_unavailable:'This view cannot send images to Claude.'}[c];
+      setMsg(m||'Could not read the result. Try a clearer screenshot with the price axis visible.',c!=='cancelled');
+    }finally{clearInterval(timer);go.disabled=false;$('stop').style.display='none'}
+  });
+  $('stop').addEventListener('click',function(){if(ctl)ctl.abort()});
+
+  function cell(label,val,hi,hint){var c=el('div','cell'+(hi?' hi':''));c.appendChild(el('small','',label));c.appendChild(el('b','',val||'-'));if(hint)c.appendChild(el('em','',hint));return c}
+  function sec(title){return el('h2','',title)}
+  function zones(list){
+    var w=el('div','card');
+    if(!list||!list.length){w.appendChild(el('p','','None clearly marked.'));return w}
+    list.forEach(function(z){var r=el('div','zone');r.appendChild(el('span','',z.note||''));r.appendChild(el('b','',(z.from||'?')+' - '+(z.to||'?')));w.appendChild(r)});
+    return w;
+  }
+
+  function toBlob(u){var p=u.split(','),m=/data:(.*?);/.exec(p[0])[1],b=atob(p[1]),n=b.length,a=new Uint8Array(n);while(n--)a[n]=b.charCodeAt(n);return new Blob([a],{type:m})}
+  function fmt(v){v=+v;return Math.abs(v)>=100?v.toFixed(2):Math.abs(v)>=1?v.toFixed(4):v.toFixed(5)}
+  function drawMarked(src,d,bias,showL,done){
+    var o=d.overlay,ax=o&&o.axis;
+    if(!ax||ax.length<2){done(null);return}
+    var p1=+ax[0].price,p2=+ax[1].price,y1=+ax[0].y_pct,y2=+ax[1].y_pct;
+    if(!isFinite(p1+p2+y1+y2)||p1===p2){done(null);return}
+    var im=new Image();
+    im.onerror=function(){done(null)};
+    im.onload=function(){
+      var sc=Math.min(1,1800/im.naturalWidth),W=Math.round(im.naturalWidth*sc),H=Math.round(im.naturalHeight*sc);
+      var cv=document.createElement('canvas');cv.width=W;cv.height=H;var c=cv.getContext('2d');c.drawImage(im,0,0,W,H);
+      function Y(p){return (y1+(p-p1)*(y2-y1)/(p2-p1))/100*H}
+      var xr=((+o.plot_right_pct)||100)/100*W,ex=((+o.entry_x_pct)||60)/100*W,fs=Math.max(12,Math.round(W/52)),lw=Math.max(2,Math.round(W/520));
+      c.font='700 '+fs+'px Inter,Arial,sans-serif';c.textBaseline='middle';
+      (o.zones||[]).forEach(function(z){
+        if(z.top==null||z.bottom==null)return;
+        var a=Y(+z.top),b=Y(+z.bottom),xs=Math.max(0,((+z.x_from_pct)||0)/100*W),ty=(z.type||'').toLowerCase();
+        if(!isFinite(a+b))return;
+        var red=/sup|bear/.test(ty),fvg=/fvg/.test(ty),col=fvg?'#BBBBBB':red?'#FF3B30':'#30D158';
+        c.fillStyle=fvg?'rgba(200,200,200,.14)':red?'rgba(255,59,48,.16)':'rgba(48,209,88,.16)';c.fillRect(xs,Math.min(a,b),xr-xs,Math.abs(b-a));
+        c.strokeStyle=col;c.lineWidth=lw;c.setLineDash(fvg?[lw*3,lw*2]:[]);c.strokeRect(xs,Math.min(a,b),xr-xs,Math.abs(b-a));c.setLineDash([]);
+        var nm=/ob/.test(ty)?'OB':fvg?'FVG':red?'SUPPLY':'DEMAND',nw=c.measureText(nm).width+12,ny=Math.min(a,b);
+        if(showL){c.fillStyle=col;c.fillRect(xs,ny-fs-2,nw,fs+2);c.fillStyle=fvg||!red?'#000':'#fff';c.fillText(nm,xs+6,ny-fs/2)}
+      });
+      (o.structure||[]).forEach(function(s2){
+        if(s2.price==null)return;var y=Y(+s2.price);if(!isFinite(y))return;
+        var xs=((+s2.x_from_pct)||0)/100*W,xe=((+s2.x_to_pct)||((+s2.x_from_pct||0)+15))/100*W;
+        c.setLineDash([lw,lw*2]);c.strokeStyle='#000';c.lineWidth=lw+3;c.beginPath();c.moveTo(xs,y);c.lineTo(xe,y);c.stroke();
+        c.strokeStyle='#FFD60A';c.lineWidth=lw;c.beginPath();c.moveTo(xs,y);c.lineTo(xe,y);c.stroke();c.setLineDash([]);
+        var lb=String(s2.label||'BOS'),lwid=c.measureText(lb).width+10;
+        if(showL){c.fillStyle='#FFD60A';c.fillRect((xs+xe)/2-lwid/2,y-fs-6,lwid,fs+2);c.fillStyle='#000';c.fillText(lb,(xs+xe)/2-lwid/2+5,y-fs/2-5)}
+      });
+      var L=o.levels||{},list=[['range_high','CRT HIGH','#FFFFFF',true,Math.max(0,ex-W*.2)],['range_low','CRT LOW','#FFFFFF',true,Math.max(0,ex-W*.2)],['equilibrium','50%','#BBBBBB',true,Math.max(0,ex-W*.2)],
+        ['entry','ENTRY','#0A84FF',false,ex-W*.05],['stop_loss','SL','#FF3B30',false,ex-W*.05],['take_profit_1','TP1','#30D158',false,ex-W*.05],['take_profit_2','TP2','#30D158',false,ex-W*.05]];
+      var items=[];
+      list.forEach(function(it){
+        var v=L[it[0]];if(v==null||v==='')return;
+        if(bias==='WAIT'&&/entry|stop|take/.test(it[0]))return;
+        var y=Y(+v);if(!isFinite(y)||y<0||y>H)return;
+        items.push({it:it,v:v,y:y});
+      });
+      items.forEach(function(o2){
+        var it=o2.it,y=o2.y,x0=it[4];
+        c.setLineDash(it[3]?[lw*4,lw*3]:[]);
+        c.strokeStyle='#000';c.lineWidth=lw+3;c.beginPath();c.moveTo(x0,y);c.lineTo(W,y);c.stroke();
+        c.strokeStyle=it[2];c.lineWidth=lw;c.beginPath();c.moveTo(x0,y);c.lineTo(W,y);c.stroke();c.setLineDash([]);
+      });
+      var used=[];
+      if(showL)items.slice().sort(function(a,b){return a.y-b.y}).forEach(function(o2){
+        var it=o2.it,t=it[1]+' '+fmt(o2.v),tw=c.measureText(t).width+12,ly=o2.y;
+        used.forEach(function(u){if(Math.abs(ly-u)<fs+6)ly=u+fs+6});used.push(ly);
+        var lx=Math.max(4,W-tw-3);
+        c.fillStyle=it[2];c.beginPath();c.roundRect?c.roundRect(lx,ly-fs/2-4,tw,fs+8,6):c.rect(lx,ly-fs/2-4,tw,fs+8);c.fill();
+        c.fillStyle=(it[2]==='#FFFFFF'||it[2]==='#BBBBBB'||it[2]==='#30D158')?'#000':'#fff';c.fillText(t,lx+6,ly);
+      });
+      done(cv.toDataURL('image/png'));
+    };
+    im.src=src;
+  }
+
+  function render(d){
+    out.textContent='';
+    if(!d.readable){var c=el('div','card');c.appendChild(el('h3','','Chart not readable'));c.appendChild(el('p','',d.summary||'Upload a clearer chart screenshot with candles and the price axis visible.'));out.appendChild(c);return}
+    var bias=(d.bias||'WAIT').toUpperCase();
+    var v=el('div','verdict');
+    v.appendChild(el('div','badge',(bias==='BUY'?'\u25B2 ':bias==='SELL'?'\u25BC ':'\u25CF ')+bias));
+    var vm=el('div','vm');
+    vm.appendChild(el('b','',[d.instrument,d.timeframe].filter(Boolean).join(' \u00B7 ')||'Chart analysis'));
+    vm.appendChild(el('span','','Confidence: '+(d.confidence||'-')+(d.current_price?'  \u00B7  Price now: '+d.current_price:'')));
+    v.appendChild(vm);out.appendChild(v);
+    if(d.summary){var s=el('p','',d.summary);s.style.cssText='margin:14px 0 0;color:var(--mut)';out.appendChild(s)}
+
+    var mk=el('div','mk');out.appendChild(mk);
+    var src0=$('pimg').src,showL=true,mim=null,tb=null;
+    function paint(){drawMarked(src0,d,bias,showL,function(url){
+      if(!url){if(!mim)mk.appendChild(el('p','note','Could not draw the levels on this screenshot. The numbers below still apply.'));return}
+      if(!mim){
+        mim=el('img');mim.alt='Your chart with entry, stop loss and take profit drawn on it';mk.appendChild(mim);
+        mk.appendChild(el('p','note','Levels are drawn from the price axis in your screenshot. Check them against your own chart before trading.'));
+        tb=el('button','copy dl','Hide labels');tb.type='button';tb.style.marginRight='8px';
+        tb.addEventListener('click',function(){showL=!showL;tb.textContent=showL?'Hide labels':'Show labels';paint()});mk.appendChild(tb);
+        var db=el('button','copy dl','Download marked chart');db.type='button';
+        db.addEventListener('click',async function(){
+          try{var an=document.createElement('a');an.href=mim.src;an.download='snupa-marked-chart.png';document.body.appendChild(an);an.click();an.remove()}catch(e){db.textContent='Press and hold the image to save it'}
+        });mk.appendChild(db);
+      }
+      mim.src=url;
+    })}
+    paint();
+    var t=d.trade||{};
+    out.appendChild(sec(bias==='WAIT'?'No entry yet':'Your trade plan'));
+    if(bias!=='WAIT'){
+      var g=el('div','plan');
+      g.appendChild(cell('When',t.when,false,t.timing||'Rough estimate'));g.appendChild(cell('Order',t.order_type,false,'How to place the trade'));
+      g.appendChild(cell('Enter at',t.entry,true,'The price to get in'));
+      g.appendChild(cell('Stop loss',t.stop_loss,false,'Exit here if you are wrong'));
+      g.appendChild(cell('Take profit 1',t.take_profit_1,false,'First place to take profit'));
+      g.appendChild(cell('Take profit 2',t.take_profit_2,false,'Second place to take profit'));
+      g.appendChild(cell('Risk : reward',t.risk_reward,false,'Risk 1 to win this much'));
+      out.appendChild(g);
+      var rs=el('div','card');rs.style.marginTop='10px';[['Entry',t.entry_reason],['Stop',t.stop_reason],['Cancelled if',t.invalidation]].forEach(function(r){if(!r[1])return;var p=el('p');p.style.margin='5px 0';var bb=el('b','',r[0]+': ');bb.style.color='var(--ink)';p.appendChild(bb);p.appendChild(document.createTextNode(r[1]));rs.appendChild(p)});out.appendChild(rs);
+    }else{
+      var w=el('div','card');w.appendChild(el('h3','','Wait for'));w.appendChild(el('p','',d.if_wait||'Wait for a clear sweep and a return into a fresh zone.'));out.appendChild(w);
+    }
+
+    if(d.breakdown&&d.breakdown.length){
+      out.appendChild(sec('Breakdown'));
+      var ol=el('ol','bd');d.breakdown.forEach(function(b){var li=el('li');li.appendChild(el('b','',(b.step||'')+': '));li.appendChild(document.createTextNode(b.detail||''));ol.appendChild(li)});out.appendChild(ol);
+    }
+    var more=document.createElement('details');more.className='more';var sm0=document.createElement('summary');sm0.textContent='More details';more.appendChild(sm0);var host=more;out.appendChild(more);
+    var sm=d.smc;
+    if(sm){
+      host.appendChild(sec('SMC read'));
+      var g3=el('div','plan');g3.appendChild(cell('Trend',sm.trend));g3.appendChild(cell('Price is in',sm.premium_discount));host.appendChild(g3);
+      function listCard(title,arr,f){
+        var h=el('h3','',title);h.style.margin='14px 0 8px';host.appendChild(h);
+        var w=el('div','card');
+        if(!arr||!arr.length){w.appendChild(el('p','','None clearly marked.'))}
+        else arr.forEach(function(x){var r=el('div','zone');r.appendChild(el('span','',x.note||x.type||''));r.appendChild(el('b','',f(x)));w.appendChild(r)});
+        host.appendChild(w);
+      }
+      listCard('Market structure (breaks in the trend)',sm.structure,function(x){return (x.label||'')+' '+(x.price||'')});
+      listCard('Liquidity (where traders\' stop orders sit)',sm.liquidity,function(x){return (x.type||'')+' '+(x.price||'')});
+      listCard('Order blocks (where big players bought or sold)',sm.order_blocks,function(x){return (x.type||'')+': '+(x.bottom||'?')+' - '+(x.top||'?')});
+      listCard('Fair value gaps (price jumped and may come back)',sm.fvg,function(x){return (x.type||'')+': '+(x.bottom||'?')+' - '+(x.top||'?')});
+      if(sm.explanation){var ex=el('div','card');ex.style.marginTop='10px';ex.appendChild(el('p','',sm.explanation));host.appendChild(ex)}
+    }
+    var cr=d.crt;
+    if(cr){
+    host.appendChild(sec('CRT read'));
+    var g2=el('div','plan');
+    g2.appendChild(cell('Range high',cr.range_high));g2.appendChild(cell('Range low',cr.range_low));g2.appendChild(cell('50% level',cr.equilibrium));
+    host.appendChild(g2);
+    var cc=el('div','card');cc.style.marginTop='10px';
+    cc.appendChild(el('h3','',cr.setup_found?'CRT setup found':'No clean CRT setup'));
+    if(cr.sweep)cc.appendChild(el('p','','Sweep: '+cr.sweep));
+    if(cr.explanation){var p=el('p','',cr.explanation);p.style.marginTop='6px';cc.appendChild(p)}
+    host.appendChild(cc);
+    }
+
+    var sd=d.supply_demand||{};
+    host.appendChild(sec('Supply & Demand zones'));
+    var h1=el('h3','','Supply (areas where sellers took over)');h1.style.margin='0 0 8px';host.appendChild(h1);host.appendChild(zones(sd.supply_zones));
+    var h2=el('h3','','Demand (areas where buyers took over)');h2.style.margin='0 0 8px';host.appendChild(h2);host.appendChild(zones(sd.demand_zones));
+    if(sd.explanation){var e=el('div','card');e.appendChild(el('p','',sd.explanation));host.appendChild(e)}
+
+    if(d.confirmations&&d.confirmations.length){
+      host.appendChild(sec('Confirm before you enter'));
+      var ul=el('ul','ck');d.confirmations.forEach(function(x){ul.appendChild(el('li','',x))});host.appendChild(ul);
+    }
+
+    lastText=['SNUPA Market Analyser',(d.instrument||'')+' '+(d.timeframe||''),'Bias: '+bias+' ('+(d.confidence||'-')+')',
+      bias!=='WAIT'?'Entry: '+(t.entry||'-')+' | SL: '+(t.stop_loss||'-')+' | TP1: '+(t.take_profit_1||'-')+' | TP2: '+(t.take_profit_2||'-')+' | RR: '+(t.risk_reward||'-'):'Wait for: '+(d.if_wait||'-'),
+      d.summary||''].join('\n');
+    var cb=el('button','copy','Copy plan');cb.type='button';
+    cb.addEventListener('click',function(){
+      try{navigator.clipboard.writeText(lastText).then(function(){cb.textContent='Copied'},function(){cb.textContent='Copy not allowed'})}catch(x){cb.textContent='Copy not allowed'}
+    });
+    out.appendChild(cb);
+  }
+})();
+</script>
+</body>
+</html>
